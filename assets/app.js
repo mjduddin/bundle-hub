@@ -196,9 +196,17 @@ function initLanding() {
   });
 }
 
+/* Clean-URL support: on /skin?src=qr the rewrite serves bundle.html but the
+   id param can be dropped when the QR adds its own params — recover the
+   bundle id from the URL path. */
+function pathBundleId() {
+  const p = window.location.pathname.replace(/^\/+|\/+$/g, "");
+  return /^[a-z][a-z-]*$/.test(p) ? p : "";
+}
+
 /* ---------- page: bundle ---------- */
 function initBundle() {
-  const id = qs("id");
+  const id = qs("id") || pathBundleId();
   const container = document.getElementById("bundle-content");
   const notFound = document.getElementById("not-found");
   const titleEl = document.getElementById("bundle-title");
