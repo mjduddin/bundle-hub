@@ -1,0 +1,58 @@
+# Netlify configuration — Bundle Hub + ACM Learning Hub
+
+# ---------- Pretty URLs: /skin -> bundle page ----------
+[[redirects]]
+  from = "/skin"
+  to = "/bundles/bundle.html?id=skin"
+  status = 200
+
+[[redirects]]
+  from = "/falls"
+  to = "/bundles/bundle.html?id=falls"
+  status = 200
+
+[[redirects]]
+  from = "/infection"
+  to = "/bundles/bundle.html?id=infection"
+  status = 200
+
+[[redirects]]
+  from = "/palliative"
+  to = "/bundles/bundle.html?id=palliative"
+  status = 200
+
+[[redirects]]
+  from = "/admission"
+  to = "/bundles/bundle.html?id=admission"
+  status = 200
+
+[[redirects]]
+  from = "/discharge"
+  to = "/bundles/bundle.html?id=discharge"
+  status = 200
+
+[[redirects]]
+  from = "/lines"
+  to = "/bundles/bundle.html?id=lines"
+  status = 200
+
+[[redirects]]
+  from = "/mobility"
+  to = "/bundles/bundle.html?id=mobility"
+  status = 200
+
+[[redirects]]
+  from = "/behavior"
+  to = "/bundles/bundle.html?id=behavior"
+  status = 200
+
+# ---------- Security headers ----------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # CSP allows self, Google Fonts, and Supabase inserts only.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
