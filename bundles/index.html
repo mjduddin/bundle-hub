@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5E/4F Bundle Hub — bedside standard-work bundles for med-surg and palliative care nursing staff.">
+  <title>5E/4F Bundle Hub | Bedside Standard Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="landing">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="gov-banner">
+    <span class="flag" aria-hidden="true">
+      <svg width="16" height="11" viewBox="0 0 16 11" aria-hidden="true"><rect width="16" height="11" fill="#b50909"/><rect y="1.6" width="16" height="1.6" fill="#fff"/><rect y="4.7" width="16" height="1.6" fill="#fff"/><rect y="7.9" width="16" height="1.6" fill="#fff"/><rect width="7" height="6.3" fill="#162e51"/></svg>
+    </span>
+    An official resource of the U.S. Department of Veterans Affairs — Standards Reliability and Bundle Set Program
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="va-logo" src="../assets/img/va-seal.png" alt="Seal of the U.S. Department of Veterans Affairs" width="56" height="56">
+      <p class="site-title">
+        5E/4F Bundle Hub
+        <span class="subtitle">Bedside Standard Work &bull; Med-Surg &amp; Palliative Care</span>
+      </p>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html" aria-current="page">Bundles</a></li>
+      <li><a href="survey.html">Survey</a></li>
+      <li><a href="../help.html">Help</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Bedside Standard Work, One Scan Away</h1>
+    <p>Scan a bundle's QR code at the bedside, or pick a bundle below. Each one gives you the trigger, supplies, actions, documentation, and escalation steps on one phone-sized page.</p>
+    <p><strong>No login. No app. No TMS account needed.</strong> These pages contain no patient information, so they open instantly on any phone.</p>
+  </section>
+
+  <main id="main-content">
+    <span class="section-label">How to use</span>
+    <h2>Pick your bundle</h2>
+    <p>Filter by unit if you like, then tap a bundle. The staff phrase at the top of each bundle is your quick memory cue.</p>
+
+    <div id="filter-bar" class="filter-bar" role="group" aria-label="Filter bundles by unit"></div>
+
+    <div id="bundle-grid" class="card-grid" aria-live="polite"></div>
+
+    <div id="load-error" class="alert alert-warning" hidden>
+      <strong>Could not load bundles.</strong> Check your connection and refresh. If this keeps happening, tell your unit champion.
+    </div>
+
+    <div class="alert alert-info">
+      <strong>No patient information:</strong> this site is a reference for standard work only. Never enter patient details anywhere on these pages.
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <ul class="footer-nav">
+        <li><a href="../index.html">ACM Learning Hub</a></li>
+        <li><a href="index.html">All Bundles</a></li>
+        <li><a href="survey.html">Staff Survey</a></li>
+        <li><a href="admin.html">For Administrators</a></li>
+      </ul>
+      <p class="fine-print">Standards Reliability and Bundle Set Program &bull; Pilot units 5E &amp; 4F &bull; U.S. Department of Veterans Affairs. Content is approved standard work only — no patient information is collected or displayed.</p>
+    </div>
+  </footer>
+
+  <script src="../bundles.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

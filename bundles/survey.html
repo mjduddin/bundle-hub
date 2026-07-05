@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anonymous staff survey for the 5E/4F Bundle Hub pilot — ease of access and workflow burden.">
+  <title>Staff Survey | 5E/4F Bundle Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="survey">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="sticky-back">
+    <a href="index.html">&larr; Back to all bundles</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="va-logo" src="../assets/img/va-seal.png" alt="Seal of the U.S. Department of Veterans Affairs" width="56" height="56">
+      <p class="site-title">
+        5E/4F Bundle Hub
+        <span class="subtitle">Bedside Standard Work &bull; Med-Surg &amp; Palliative Care</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <span class="section-label" id="survey-type-label">Baseline survey</span>
+    <h1>Two minutes, completely anonymous</h1>
+    <p>Your answers help us measure whether the Bundle Hub actually makes your shift easier. No names, no IDs, no tracking.</p>
+
+    <form id="survey-form" novalidate>
+      <input type="hidden" id="survey-type" name="survey_type" value="baseline">
+
+      <fieldset>
+        <legend>What is your role?</legend>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="role" value="RN" required><span>RN</span></label>
+          <label class="radio-pill"><input type="radio" name="role" value="ancillary"><span>Ancillary</span></label>
+          <label class="radio-pill"><input type="radio" name="role" value="other"><span>Other</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Which unit do you mainly work on?</legend>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="unit" value="5E" required><span>5E</span></label>
+          <label class="radio-pill"><input type="radio" name="unit" value="4F"><span>4F</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>How easy is it to find current standard work when you need it? (1 = very hard, 5 = very easy)</legend>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="ease" value="1" required><span>1</span></label>
+          <label class="radio-pill"><input type="radio" name="ease" value="2"><span>2</span></label>
+          <label class="radio-pill"><input type="radio" name="ease" value="3"><span>3</span></label>
+          <label class="radio-pill"><input type="radio" name="ease" value="4"><span>4</span></label>
+          <label class="radio-pill"><input type="radio" name="ease" value="5"><span>5</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>How much time or disruption does finding standard work add to your workflow? (1 = a lot, 5 = almost none)</legend>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="burden" value="1" required><span>1</span></label>
+          <label class="radio-pill"><input type="radio" name="burden" value="2"><span>2</span></label>
+          <label class="radio-pill"><input type="radio" name="burden" value="3"><span>3</span></label>
+          <label class="radio-pill"><input type="radio" name="burden" value="4"><span>4</span></label>
+          <label class="radio-pill"><input type="radio" name="burden" value="5"><span>5</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>The last time you looked, did you find what you needed?</legend>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="found" value="yes" required><span>Yes</span></label>
+          <label class="radio-pill"><input type="radio" name="found" value="no"><span>No</span></label>
+        </div>
+      </fieldset>
+
+      <div class="form-field">
+        <label for="sv-comment">Anything else? (optional)</label>
+        <textarea id="sv-comment" name="comment" rows="4" maxlength="1000" aria-describedby="sv-note"></textarea>
+        <p class="fb-note" id="sv-note">Do <strong>not</strong> enter any patient information — no names, rooms, or record numbers.</p>
+        <p class="error-msg" id="sv-phi-warn" hidden>Your comment looks like it may contain patient information. Please remove it before submitting.</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit survey</button>
+    </form>
+
+    <div id="survey-done" class="status-panel" tabindex="-1" hidden>
+      <span class="big-icon" aria-hidden="true">&#9989;</span>
+      <h2>Thank you!</h2>
+      <p>Your anonymous response was recorded. It directly shapes how the Bundle Hub improves.</p>
+      <p><a class="btn btn-secondary" href="index.html">Back to all bundles</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <ul class="footer-nav">
+        <li><a href="index.html">All Bundles</a></li>
+        <li><a href="../index.html">ACM Learning Hub</a></li>
+      </ul>
+      <p class="fine-print">Standards Reliability and Bundle Set Program &bull; U.S. Department of Veterans Affairs. Survey responses are anonymous and reported only in aggregate.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

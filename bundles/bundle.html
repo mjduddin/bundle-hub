@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bedside standard-work bundle — trigger, supplies, actions, documentation, escalation, and audit item.">
+  <title>Bundle | 5E/4F Bundle Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="bundle">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="sticky-back">
+    <a href="index.html">&larr; Back to all bundles</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="va-logo" src="../assets/img/va-seal.png" alt="Seal of the U.S. Department of Veterans Affairs" width="56" height="56">
+      <p class="site-title">
+        5E/4F Bundle Hub
+        <span class="subtitle">Bedside Standard Work &bull; Med-Surg &amp; Palliative Care</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div id="bundle-content">
+      <h1 id="bundle-title">Loading bundle&hellip;</h1>
+      <p id="bundle-units" class="section-label"></p>
+
+      <div class="phrase-banner">
+        <p class="phrase-text" id="phrase-text"></p>
+        <p class="goal" id="bundle-goal"></p>
+      </div>
+
+      <div id="sections"></div>
+
+      <div class="feedback-box">
+        <h2>Was this helpful?</h2>
+        <div class="fb-buttons">
+          <button type="button" id="fb-yes" class="fb-btn" aria-pressed="false">&#128077; Yes, helpful</button>
+          <button type="button" id="fb-no" class="fb-btn" aria-pressed="false">&#128078; Not helpful</button>
+        </div>
+        <label for="fb-comment"><strong>Optional comment</strong></label>
+        <textarea id="fb-comment" rows="3" maxlength="500" aria-describedby="fb-note"></textarea>
+        <p class="fb-note" id="fb-note">Do <strong>not</strong> enter any patient information — no names, rooms, or record numbers. Feedback is anonymous.</p>
+        <p class="error-msg" id="fb-phi-warn" hidden>Your comment looks like it may contain patient information (a room number, record number, or similar). Please remove it before sending.</p>
+        <button type="button" id="fb-send" class="btn btn-primary">Send feedback</button>
+        <p id="fb-thanks" role="status" hidden></p>
+      </div>
+
+      <h2>Other bundles</h2>
+      <ul id="related"></ul>
+    </div>
+
+    <div id="not-found" class="status-panel" hidden>
+      <span class="big-icon" aria-hidden="true">&#128269;</span>
+      <h1>Bundle not found or not yet published</h1>
+      <p>This bundle may still be in draft while it completes the approval process, or the link may be out of date.</p>
+      <p><a class="btn btn-secondary" href="index.html">See all published bundles</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <ul class="footer-nav">
+        <li><a href="index.html">All Bundles</a></li>
+        <li><a href="survey.html">Staff Survey</a></li>
+        <li><a href="../index.html">ACM Learning Hub</a></li>
+      </ul>
+      <p class="fine-print">Standards Reliability and Bundle Set Program &bull; U.S. Department of Veterans Affairs. Reference for approved standard work only — never enter patient information.</p>
+    </div>
+  </footer>
+
+  <script src="../bundles.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

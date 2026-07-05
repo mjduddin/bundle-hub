@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Administrator instructions for reading Bundle Hub analytics and survey data.">
+  <title>For Administrators | 5E/4F Bundle Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="sticky-back">
+    <a href="index.html">&larr; Back to all bundles</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="va-logo" src="../assets/img/va-seal.png" alt="Seal of the U.S. Department of Veterans Affairs" width="56" height="56">
+      <p class="site-title">
+        5E/4F Bundle Hub
+        <span class="subtitle">Administrator Notes &bull; Data Access</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <h1>Where the data lives (and why it is not on this site)</h1>
+
+    <div class="alert alert-info">
+      <strong>By design, this public app never reads data back.</strong> It only inserts anonymous rows. All reading happens in the Supabase console, which requires the departmental admin login.
+    </div>
+
+    <h2>Reading analytics and survey data</h2>
+    <ol class="steps">
+      <li>
+        <h3>Sign in to Supabase</h3>
+        <p>Use the shared departmental account (see the README in the GitHub repository). Open the project, then Table Editor.</p>
+      </li>
+      <li>
+        <h3>Review the two tables</h3>
+        <p><strong>events</strong> holds landing views, bundle views, dwell times, and feedback clicks. <strong>survey_responses</strong> holds quick feedback and baseline/post surveys.</p>
+      </li>
+      <li>
+        <h3>Export for run charts</h3>
+        <p>Use the CSV export button (or the SQL editor) and build weekly run charts in Excel for the QI/LEAN reviews. Report only in aggregate.</p>
+      </li>
+    </ol>
+
+    <h2>Security model — verify before every audit</h2>
+    <p>Row-Level Security (RLS) must be enabled on both tables with INSERT-only policies for the anonymous role and <strong>no public SELECT</strong>. The public anon key shipped in this site is only safe under that configuration. The exact SQL is in the README.</p>
+
+    <h2>Updating content</h2>
+    <p>Edit <code>bundles.js</code> in the GitHub repository, commit, and push — Netlify redeploys automatically. No QR codes need reprinting. Set <code>"draft": true</code> on any bundle that has not cleared the approval process; drafts are hidden unless a reviewer adds <code>?preview=1</code> to the URL.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <ul class="footer-nav">
+        <li><a href="index.html">All Bundles</a></li>
+        <li><a href="../index.html">ACM Learning Hub</a></li>
+      </ul>
+      <p class="fine-print">Standards Reliability and Bundle Set Program &bull; U.S. Department of Veterans Affairs.</p>
+    </div>
+  </footer>
+</body>
+</html>
