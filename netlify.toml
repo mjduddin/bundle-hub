@@ -46,6 +46,11 @@
   to = "/bundles/bundle.html?id=behavior"
   status = 200
 
+[[redirects]]
+  from = "/stats"
+  to = "/stats.html"
+  status = 200
+
 # ---------- Security headers ----------
 [[headers]]
   for = "/*"

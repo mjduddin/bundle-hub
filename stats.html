@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Leadership dashboard — aggregate usage and feedback for the 5E/4F Bundle Hub pilot.">
+  <title>Leadership Stats | 5E/4F Bundle Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.75rem;margin:1.25rem 0 2rem}
+    .kpi{background:var(--va-white);border:1px solid var(--va-gray-lighter);border-top:5px solid var(--va-primary);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem}
+    .kpi.gold{border-top-color:var(--va-gold)}
+    .kpi .v{font-family:"Bitter",Georgia,serif;font-size:1.75rem;font-weight:700;color:var(--va-primary-darker);line-height:1.1}
+    .kpi .l{font-size:0.75rem;color:var(--va-base-dark);text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem}
+    .barlist{margin:0 0 0.5rem}
+    .barrow{margin-bottom:0.625rem}
+    .barrow .lbl{display:flex;justify-content:space-between;font-size:0.875rem;margin-bottom:0.2rem}
+    .barrow .lbl strong{color:var(--va-primary-darker)}
+    .bar{height:14px;border-radius:7px;background:var(--va-gray-lightest);overflow:hidden}
+    .bar > span{display:block;height:100%;background:var(--va-primary);border-radius:7px;min-width:2px}
+    .bar.gold > span{background:var(--va-gold)}
+    .bar.red > span{background:var(--va-secondary-dark)}
+    .stat-table{width:100%;border-collapse:collapse;font-size:0.9375rem}
+    .stat-table th{text-align:left;font-size:0.75rem;text-transform:uppercase;color:var(--va-base-dark);border-bottom:2px solid var(--va-gray-lighter);padding:0.4rem 0.5rem}
+    .stat-table td{padding:0.4rem 0.5rem;border-bottom:1px solid var(--va-gray-lighter)}
+    .stat-table td.num{text-align:right;font-variant-numeric:tabular-nums}
+    .empty-note{color:var(--va-base-dark);font-style:italic;font-size:0.9375rem}
+    #updated{font-size:0.8125rem;color:var(--va-base-dark)}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="gov-banner">
+    <span class="flag" aria-hidden="true">
+      <svg width="16" height="11" viewBox="0 0 16 11" aria-hidden="true"><rect width="16" height="11" fill="#b50909"/><rect y="1.6" width="16" height="1.6" fill="#fff"/><rect y="4.7" width="16" height="1.6" fill="#fff"/><rect y="7.9" width="16" height="1.6" fill="#fff"/><rect width="7" height="6.3" fill="#162e51"/></svg>
+    </span>
+    An official resource of the U.S. Department of Veterans Affairs — Standards Reliability and Bundle Set Program
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="va-logo" src="assets/img/va-seal.png" alt="Seal of the U.S. Department of Veterans Affairs" width="56" height="56">
+      <p class="site-title">
+        Bundle Hub — Leadership Stats
+        <span class="subtitle">5E/4F Pilot &bull; Live, Anonymous, Aggregate-Only Data</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <p id="updated" role="status">Loading live data&hellip;</p>
+
+    <div class="kpi-grid">
+      <div class="kpi"><div class="v" id="k-views">–</div><div class="l">Total bundle views</div></div>
+      <div class="kpi"><div class="v" id="k-sessions">–</div><div class="l">Unique visits</div></div>
+      <div class="kpi gold"><div class="v" id="k-qr">–</div><div class="l">Via QR scan</div></div>
+      <div class="kpi"><div class="v" id="k-reach">–</div><div class="l">Bundles in use (of 8)</div></div>
+      <div class="kpi gold"><div class="v" id="k-helpful">–</div><div class="l">Rated helpful</div></div>
+    </div>
+
+    <span class="section-label">QI Measure 1</span>
+    <h2>Weekly bundle views</h2>
+    <div class="barlist" id="w-weekly"><p class="empty-note">Loading&hellip;</p></div>
+
+    <span class="section-label">QI Measure 2</span>
+    <h2>Views per bundle</h2>
+    <div class="barlist" id="w-bundle"></div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>How staff arrive</h3>
+        <div id="w-source"></div>
+      </div>
+      <div class="card accent-gold">
+        <h3>QR placement performance</h3>
+        <div id="w-placement"></div>
+      </div>
+      <div class="card">
+        <h3>Unit &amp; shift (Central Time)</h3>
+        <div id="w-shift"></div>
+      </div>
+      <div class="card accent-red">
+        <h3>Was this helpful?</h3>
+        <div id="w-helpful"></div>
+      </div>
+    </div>
+
+    <span class="section-label">QI Measures 5 &amp; 6</span>
+    <h2>Staff survey — ease &amp; workflow burden</h2>
+    <div id="w-survey"></div>
+
+    <div class="alert alert-info" style="margin-top:2rem">
+      <strong>About this page:</strong> all figures are anonymous and aggregate-only — no individual staff activity, sessions, or free-text comments are shown or accessible here. Data updates live from the pilot analytics.
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <ul class="footer-nav">
+        <li><a href="bundles/index.html">Bundle Hub</a></li>
+        <li><a href="index.html">ACM Learning Hub</a></li>
+      </ul>
+      <p class="fine-print">Standards Reliability and Bundle Set Program &bull; U.S. Department of Veterans Affairs.</p>
+    </div>
+  </footer>
+
+  <script src="assets/stats.js"></script>
+</body>
+</html>
